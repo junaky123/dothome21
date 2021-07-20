@@ -253,11 +253,12 @@
         <h2>01. if문 <span class="dot"></span></h2>
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
-    //true, 1, "1", [], {}, false, 0, "", null, undefined
-    if(true){
+    // true, 1(true) , "1"(true) , [ ](배열은 true), { }(true)
+    // false, 0(false), null(false) , undefined(false), ""(false)
+    if (true) {
         document.write("*** 01. if문 ***");
         document.write("조건문이 실행되었습니다.(true)");
-    } else{
+    } else {
         document.write("*** 01. if문 ***");
         document.write("조건문이 실행되었습니다.(false)");
     }
@@ -274,16 +275,16 @@
 <pre class="line-numbers"><code class="language-js">{
     let num = 100;
 
-    if( num == 90){
+    if ( num == 90){
         document.write("*** 02. 다중 if문 ***");
         document.write("조건문이 실행되었습니다.(num == 90)");
-    } else if( num == 100){
+    } else if ( num == 100) {
         document.write("*** 02. 다중 if문 ***");
         document.write("조건문이 실행되었습니다.(num == 100)");
-    } else if( num == 200){
+    } else if ( num == 200) {
         document.write("*** 02. 다중 if문 ***");
         document.write("조건문이 실행되었습니다.(num == 200)");
-    } else if( num == 300){
+    } else if ( num == 300) {
         document.write("*** 02. 다중 if문 ***");
         document.write("조건문이 실행되었습니다.(num == 300)");
     } else {
@@ -302,16 +303,19 @@
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
     let num = 100;
-
-    if ( num == 100) {
-        document.write("*** 03. 중첩 if문 ***");
-        document.write("조건문이 실행되었습니다.(1)");
-        if(num == 100){
+    
+    if ( num == 100 ){
+        document.write("*** 03. 중첩 if문***");
+        document.write("조건문이 실행되었습니다.(1)");  
+        if (num = 100) {
             document.write("조건문이 실행되었습니다.(2)");
+            if ( num = 100){
+                document.write("조건문이 실행되었습니다.(3)");
+            }
         }
     } else {
-        document.write("*** 03. 중첩 if문 ***");
-        document.write("조건문이 실행되었습니다.(3)");
+        document.write("*** 03. 중첩 if문***");
+        document.write("조건문이 실행되었습니다.(4)");
     }
 }
 </code></pre>
@@ -329,22 +333,22 @@
     switch ( num ) {
         case 100:
             document.write("*** 04. switch문 ***");
-            document.write("조건문이 실행되었습니다.(num == 100)");        
+            document.write("조건문이 실행되었습니다.(num == 100)");
         break;
 
         case 200:
             document.write("*** 04. switch문 ***");
-            document.write("조건문이 실행되었습니다.(num == 200)");        
+            document.write("조건문이 실행되었습니다.(num == 200)");
         break;
 
         case 300:
             document.write("*** 04. switch문 ***");
-            document.write("조건문이 실행되었습니다.(num == 300)");        
+            document.write("조건문이 실행되었습니다.(num == 300)");
         break;
 
         default:
             document.write("*** 04. switch문 ***");
-            document.write("조건문이 실행되었습니다.(num == 값이 없음)");        
+            document.write("조건문이 실행되었습니다.(num == 값이 없음)");
         break;
     }
 }
@@ -364,6 +368,7 @@
     // } else {
     //     document.write("false");
     // }
+
     document.write("*** 05. 삼항연산자 ***");
     (num == 100) ? document.write("true") : document.write("false");
 }
@@ -380,10 +385,9 @@
     let num = 100;
 
     document.write("*** 06. if문 생략 ***");
-    if(num == 100)
-        document.write("true");
-    else 
-        document.write("false");
+
+    if( num == 100 ) document.write("true");
+    else document.write("false")
 }
 </code></pre>
         </div>
