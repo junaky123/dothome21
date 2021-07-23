@@ -175,7 +175,6 @@
 
         ol {
             list-style: none;
-            margin-bottom: 40px;
         }
 
         ol li {
@@ -210,7 +209,19 @@
             padding: 5px;
         }
         .mt20{
-            margin-bottom: 0;
+            margin-top:20px;
+        }
+        .ol1::before{
+            content: "데이터 저장하기 : ";
+        }
+        .ol2::before{
+            content: "데이터 불러오기 : ";
+        }
+        .ol3::before{
+            content: "데이터 실행하기 : ";
+        }
+        .ol4::before{
+            content: "데이터 제어하기 : ";
         }
     </style>
 </head>
@@ -218,26 +229,28 @@
 <body>
 
     <h1>Javascript 문법 정리</h1>
-    <ol class="mt20">
+    <ol class="ol1">
         <li><a href="javascript100.html">변수</a></li>
         <li><a href="javascript100.html">상수</a></li>
         <li><a href="javascript100.html">배열(Array)</a></li>
         <li><a href="javascript100.html">객체(Object)</a></li>
     </ol>
-    <ol class="mt20"> 
-        <li><a href="javascript300.html">함수(function)</a></li>
-    
+    <ol class="ol2">
+        <li><a href="javascript500.html">데이터</a></li>
     </ol>
-    <ol class="mt20"> 
+    <ol class="ol3">
+        <li><a href="javascript300.html">함수(function)</a></li>
+    </ol>
+    <ol class="ol4"> 
         <li><a href="javascript200.html">조건문</a></li>
         <li><a href="javascript200.html">반복문</a></li>
-    
     </ol>
-    <ol class="mt20">
-        <li><a href="javascript400.html">알고리즘 연습</a</li>
+    <ol class=>
+        <li><a href="javascript400.html">알고리즘</a</li>
     </ol>
 
-    <h2>데이터 실행 : 함수</h2>
+
+    <h2 class="mt20">알고리즘</h2>
 
     <ul>
         <li><a href ="#sample1">01. 1부터 100까지 출력하기</li>
@@ -371,7 +384,7 @@
     let table = "&lt;table&gt;";
         
     for( let i=1; i&lt;=10; i++ ){
-    table += "&lt;tr&gt;";
+        table += "&lt;tr&gt;";
         for(let j=1; j&lt;=10;j++){
             table += "&lt;td&gt;" + num + "&lt;/td&gt;";
             num ++;
@@ -397,7 +410,7 @@
     let table = "&lt;table&gt;";
         
     for( let i=1; i&lt;=10; i++ ){
-    table += "&lt;tr&gt;";
+        table += "&lt;tr&gt;";
         for(let j=1; j&lt;=10;j++ ){
             table += "&lt;td&gt;" + num + "&lt;/td&gt;";
             num --;
@@ -423,7 +436,7 @@
     let table = "&lt;table&gt;";
         
     for( let i=1; i&lt;=10; i++ ){
-    table += "&lt;tr&gt;";
+        table += "&lt;tr&gt;";
         for(let j=1; j&lt;=10;j++){
             if(j % 2 == 0)
             table += "&lt;td&gt;" + num + "&lt;/td&gt;";
@@ -603,7 +616,7 @@
             
         for( let i=1; i<=10; i++ ){
         table += "<tr>";
-            for(let j=1; j<=10;j++){
+            for(let j=1; j<=20;j++){
                 if(j % 2 == 0)
                 table += "<td>" + num + "</td>";
                 num ++;

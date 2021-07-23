@@ -203,6 +203,11 @@
         ol li.active a {
             color: #fff;
         }
+        table {border-collapse: collapse;}
+        table tr td {
+            border: 1px solid #989898;
+            padding: 5px;
+        }
         .mt20{
             margin-bottom: 0;
         }
@@ -244,55 +249,45 @@
         <li><a href="javascript200.html">반복문</a></li>
     </ol>
     <ol class=>
-        <li><a href="javascript400.html">알고리즘</a</li>
+        <li><a href="javascript400.html">알고리즘 </a</li>
     </ol>
 
 
-    <h2 class="mt20">데이터 실행 : 함수</h2>
+    <h2 class="mt20">데이터 불러오기 </h2>
 
     <ul>
-        <li><a href ="#">01. 선언적 함수</a></li>
-        <li><a href ="#">02. 익명 함수</a></li>
-        <li><a href ="#">03. 매개변수 함수</a></li>
-        <li><a href ="#">04. 리턴값 함수</a></li>
-        <li><a href ="#">05. 재귀 함수</a></li>
-        <li><a href ="#">06. 콜백 함수</a></li>
-        <li><a href ="#">07. 내부 함수</a></li>
-        <li><a href ="#">08. 객체 생성자 함수</a></li>
-        <li><a href ="#">09. 프로토타입 함수</a></li>
-        <li><a href ="#">10. 화살표 함수</a></li>
-        <li><a href ="#">11. 아규먼트 함수</a></li>
-        <li><a href ="#">12. 즉시실행 함수</a></li>
-        <li><a href ="#">13. 파라미터 함수</a></li>
+        <li><a href ="#sample1">01. 변수:데이터 불러오기</li>
+        <li><a href ="#sample2">02. 배열:데이터 불러오기</li>
+        <li><a href ="#sample3">03. 배열:데이터 불러오기</li>
+        <li><a href ="#sample4">04. 배열:데이터 불러오기</li>
     </ul>
     
     <hr>
 
     <div id="sample1" class="sample">
-        <h2>01. 선언적 함수  <span class="dot"></span></h2>
+        <h2>01.변수 : 데이터 불러오기  <span class="dot"></span></h2>
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
-    function func(){
-        document.write("*** 01. 선억적 함수 *** ");
-        document.write("01.함수가 실행되었습니다. ");
-    }
-    func();
+    let x = 100, y = 200, z = "javasript";
+
+    document.write(x);
+    document.write(y);
+    document.write(z);
 }
 </code></pre>
         </div>
     </div>
 
-    <hr> 
-
+    <hr>
     <div id="sample2" class="sample">
-        <h2>02. 익명함수  <span class="dot"></span></h2>
+        <h2>02.배열 : 데이터 불러오기  <span class="dot"></span></h2>
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
-    const func = function(){
-        document.write("*** 02. 익명 함수 ***");
-        document.write("02.함수가 실행되었습니다.");
-    }
-    func();
+    const arr = [100,200,"javasript"];
+
+    document.write(arr[0]);
+    document.write(arr[1]);
+    document.write(arr[2]);
 }
 </code></pre>
         </div>
@@ -301,13 +296,16 @@
     <hr>
 
     <div id="sample3" class="sample">
-        <h2>03. 매개함수  <span class="dot"></span></h2>
+        <h2>03.배열 : 데이터 불러오기 : 2차 배열  <span class="dot"></span></h2>
         <div class="code">
-<pre class="line-numbers"><code class="language-js"> {
-    function func(str){
-        document.write(str);
-    }
-    func("함수가 실행되었습니다.");
+<pre class="line-numbers"><code class="language-js">{
+    const arr = [100,200,["javasript","jquery"]];
+
+    document.write(arr[0]);
+    document.write(arr[1]);
+    document.write(arr[2][0]);
+    document.write(arr[2][1]);
+    document.write(arr[2]);
 }
 </code></pre>
         </div>
@@ -316,21 +314,31 @@
     <hr>
 
     <div id="sample4" class="sample">
-        <h2>04. 리턴값 함수  <span class="dot"></span></h2>
+        <h2>04.배열 : 데이터 불러오기:갯수 구하기  <span class="dot"></span></h2>
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
-    function func (){
-        const str = "함수가 실행되었습니다.";
-        return str;
-    }
+    const arr = [100,200,"javasript"];
 
-    document.write("*** 04. 리턴값 함수 ***");
-    document.write(func());
-} 
+    document.write(arr.length)
+}
 </code></pre>
         </div>
     </div>
 
+    <hr>
+    <div id="sample4" class="sample">
+        <h2>05.배열 : 데이터 불러오기 : for문  <span class="dot"></span></h2>
+        <div class="code">
+<pre class="line-numbers"><code class="language-js">{
+    const arr = [100,200,300,400,500];
+
+    for(let i=0; i&lt;arr.length; i++){
+        document.write(arr[i])
+    }
+}
+</code></pre>
+        </div>
+    </div>
     <hr>
     <hr>
     <hr>
@@ -338,49 +346,68 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.24.0/prism.min.js"></script>
     <script>
-        //sample1
-        //01. 선언적 함수
+        //sample01
+        //01.변수 : 데이터 불러오기
         {
-            function func(){
-                document.write("*** 01. 선억적 함수 *** <br>");
-                document.write("01.함수가 실행되었습니다. <br><br>");
-            }
-            func();
+            let x = 100, y = 200, z = "javasript";
+
+            document.write("*** 01.변수 : 데이터 불러오기 ***<br>");
+
+            document.write(x,"<br>");
+            document.write(y,"<br>");
+            document.write(z,"<br><br>");
         }
 
-        //sample2
-        //02. 익명 함수(변수 안에 설정)
+        //sample02
+        //02.배열 : 데이터 불러오기
         {
-            const func = function(){
-                document.write("*** 02. 익명 함수 *** <br>");
-                document.write("02.함수가 실행되었습니다. <br><br>");
-            }
-            func();
+            const arr = [100,200,"javasript"];
+            
+            document.write("*** 02.배열 : 데이터 불러오기 ***<br>");
+
+            document.write(arr[0],"<br>");
+            document.write(arr[1],"<br>");
+            document.write(arr[2],"<br><br>");
         }
 
-        //sample3
-        //03. 매개변수 함수
+        //sample03
+        //03.배열 : 데이터 불러오기 : 2차 배열
         {
-            function func(str){
-                document.write("*** 03. 매개 함수 *** <br>");
-                document.write(str);
-            }
-            func("함수가 실행되었습니다. <br><br>");
+            const arr = [100,200,["javasript","jquery"]];
+            
+            document.write("*** 03.배열 : 데이터 불러오기:2차 배열 ***<br>");
+
+            document.write(arr[0],"<br>");
+            document.write(arr[1],"<br>");
+            document.write(arr[2][0],"<br>");
+            document.write(arr[2][1],"<br>");
+            document.write(arr[2],"<br><br>");
+        }
+        //sample04
+        //04.배열 : 데이터 불러오기 : 갯수 구하기
+        {
+            const arr = [100,200,"javasript"];
+
+            document.write("*** 04.배열 : 데이터 불러오기:갯수 구하기 ***<br>");
+
+            document.write(arr.length,"<br><br>")
         }
 
-        //sample4
-        //04. 리턴값(결과값) 함수
+        //sample03
+        //05.배열 : 데이터 불러오기 : for문
         {
-            function func (){
-                const str = "함수가 실행되었습니다. <br><br>";
-                return str;
-            }
+            const arr = [100,200,300,400,500];
 
-            document.write("*** 04. 리턴값 함수 *** <br>");
-            document.write(func());
+            document.write("*** 05.배열 : 데이터 불러오기 : for문 ***<br>");
+
+            for(let i=0; i<arr.length; i++){
+                document.write(arr[i],"<br>")
+
+            }
         }
-        //sample5
-        //05.함수
+
+        // 7월26일 숙제
+        //배열 데이터의 합을 출력
     </script>
     
 </body>
