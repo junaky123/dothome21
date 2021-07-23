@@ -274,8 +274,8 @@
         <h2>01. if문 <span class="dot"></span></h2>
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
-    // true, 1(true) , "1"(true) , [ ](배열은 true), { }(true)
-    // false, 0(false), null(false) , undefined(false), ""(false)
+    // true, 1,"1", [ ], { }
+    // false, 0, null , undefined, ""
     if (true) {
         document.write("*** 01. if문 ***");
         document.write("조건문이 실행되었습니다.(true)");
@@ -356,17 +356,14 @@
             document.write("*** 04. switch문 ***");
             document.write("조건문이 실행되었습니다.(num == 100)");
         break;
-
         case 200:
             document.write("*** 04. switch문 ***");
             document.write("조건문이 실행되었습니다.(num == 200)");
         break;
-
         case 300:
             document.write("*** 04. switch문 ***");
             document.write("조건문이 실행되었습니다.(num == 300)");
         break;
-
         default:
             document.write("*** 04. switch문 ***");
             document.write("조건문이 실행되었습니다.(num == 값이 없음)");
@@ -556,7 +553,6 @@
         d:400,
         e:500,
     }
-
     for( let key in obj ){
         document.write( key );
         document.write( obj[key] );

@@ -503,8 +503,8 @@
         <div class="code">
 <pre class="line-numbers"><code class="language-js">{
     const obj = [
-    {a:100, b:200},
-    {c:"javascript"}
+        {a:100, b:200},
+        {c:"javascript"}
     ];
 
     document.write("*** 13. 객체 ***");
@@ -572,14 +572,14 @@
         c: "javascript",
         d: function(){
             document.write("javascript가 실행 되었습니다.");
-        }
+        },
         e: function(){
             document.write(obj.c + "가 실행 되었습니다.");
         },
         f: function(){
             document.write(this.c + "가 실행 되었습니다.");
-        }  
-    }
+        }, 
+}
 
     document.write("*** 16. 객체 ***");
     document.write(obj.a);

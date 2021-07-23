@@ -203,11 +203,6 @@
         ol li.active a {
             color: #fff;
         }
-        table {border-collapse: collapse;}
-        table tr td {
-            border: 1px solid #989898;
-            padding: 5px;
-        }
         .mt20{
             margin-bottom: 0;
         }
@@ -228,6 +223,8 @@
         }
     </style>
 </head>
+
+<body>
 
 <body>
 
@@ -258,8 +255,9 @@
     <ul>
         <li><a href ="#sample1">01. 변수:데이터 불러오기</li>
         <li><a href ="#sample2">02. 배열:데이터 불러오기</li>
-        <li><a href ="#sample3">03. 배열:데이터 불러오기</li>
-        <li><a href ="#sample4">04. 배열:데이터 불러오기</li>
+        <li><a href ="#sample3">03.배열 : 데이터 불러오기 : 2차 배열</li>
+        <li><a href ="#sample4">04.배열 : 데이터 불러오기:갯수 구하기</li>
+        <li><a href ="#sample4">05. 배열 : 데이터 불러오기 : for문</li>
     </ul>
     
     <hr>
@@ -333,7 +331,7 @@
     const arr = [100,200,300,400,500];
 
     for(let i=0; i&lt;arr.length; i++){
-        document.write(arr[i])
+        document.write(arr[i]);
     }
 }
 </code></pre>
