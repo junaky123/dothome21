@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .box{
+            border: solid 1px;
+        }
+        .box1{ 
+            width: 220px;
+            height: 100px;
+            background-color: pink;
+            text-align:center;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .box1-iner{ 
+            width: 200px;
+            height: 60px;
+            line-height: 60px;
+            background-color: #fff;
+            text-align:center;
+            color: black;
+            font-size: 18px;
+            font-weight: bold;
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+        .box2{ 
+            width: 220px;
+            height: 100px;
+            margin-left: 270px;
+            margin-top: -100px;
+            background-color: orange;
+            text-align:center;
+            color: white;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .box2-iner{ 
+            width: 200px;
+            height: 60px;
+            line-height: 60px;
+            background-color: #fff;
+            text-align:center;
+            color: black;
+            font-size: 18px;
+            font-weight: bold;
+            margin-left: 10px;
+            margin-top: 10px;
+        }
+        .wntjrans{
+            border: solid black 1px;
+            margin-right: 500px;
+        }
+    </style>
+</head>
+<body>
+    <h1>1.main()함수</h1>
+    <h2>1)함수의 정의</h2>
+    <h3>(1)정의</h3>
+    <ul>
+        <span>함수</span>
+        <li>입력에 대해 연산을 수행하고 결과를 출력</li>
+        <li>프로그램에서 처리할 내용을 모아두는 묶음</li>
+    </ul>
+    <h3>(2)main()함수</h2>
+        <ol>
+            <li>C언어는 하나 이상 함수로 이루어짐</li>
+            <li>실행 가능한 하나의 프로그램에는 반드시 하나의 main()함수가 존재함</li>
+            <li>C언어는 main()함수를 수행하는 언어임</li>
+        </ol>      
+    <h2>2)기본구조</h2>
+    <h3>(1)프로그램 기본 틀</h3>
+
+    <h3>(2)코드 작성 준비</h3>
+    <ol>
+        <li>소문자로 작성해야 함</li>
+        <li>식별자는 대소문자를 구분</li>
+        <li>함수의 시작과 끝은 {}로 구분</li>
+        <li>하나의 문장 끝은;</li>
+    </ol>
+<hr>
+    <h1>2.출력문장 구현</h1>
+    <h2>1)주석문</h2>
+    <ul>
+        <span>주석문</span>
+        <li>프로그램 내에서 코드 등을 설명하기 위한 용도로 사용</li>
+        <li>프로그래머에게만 보이고 컴퓨터에서는 처리되지 않는 문장</li>
+    </ul>
+
+    <div class="box1">여러줄 주석
+        <div class="box1-iner">/* ....*/</div>
+    </div>
+
+    <div class="box2">한줄 주석
+        <div class="box2-iner">//</div>
+    </div>
+
+    <br>
+
+    <div class="wntjrans">
+        <div style="color: teal;">/*주석문이란 프로그램 내에서</div>
+        <div style="color: teal;">  코드 등을 설명하기 위한 용도로 사용한다*/</div>
+        <div>#include &lt;stdio.h&gt;</div>
+        <div>int main()</div>
+        <div>{</div>
+        <div>printf("hello");</div>
+        <div>....</div>
+        <div>}</div>
+        <div style="color: teal;">//처음으로 작성한 코드</div>
+    </div>
+
+    <h2>2)출력문</h2>
+    <ol>
+        <li>printf("");</li>
+        <li>표준출력장치(화면)에""에 지정한 글자를 나타내는 함수</li>
+        <li>헤더파일 stdio,h에 선언</li>
+    </ol>
+    <p>이스케이프 문자 (Escape Sequence)</p>
+    
+    <hr>
+
+    <h2>핵심요약</h2>
+    <div class="well">
+        <h2>main()함수 알아보기</h2>
+        <ul>
+            <li>c언어는 헤더파일과 함수로 구성됨</li>
+            <li>하나의 실행 프로그램에는 하나의 main()함수가 반드시 존재함</li>
+            <li>C언어는 소문자로 문장을 기술해야 함</li>
+            <li>식별자는 대소문자를 구분함</li>
+            <li>하나의 문장 끝에는 반드시;을 기술함</li>
+        </ul>
+    </div>
+
+    <div class="well">
+        <h2>출력문장 구현하기</h2>
+        <ul>
+            <li>표준 출력 문장으로 많이 사용되는 함수로 printf();가 있음</li>
+            <li>출력할 내용을 ""내에 기술함</li>
+            <li>newlinem,tab,form feed 등과 같은 이스케이프 문자가 있음</li>
+        </ul>
+    </div>
+</body>
+</html>
