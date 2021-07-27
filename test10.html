@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>지역변수</h1>
+    <h2>1.개요</h2>
+    <ol>
+        <li>변수 스코프(Scope) : 변수 참조가 가능한 유효범위</li>
+        <li>함수 내에 선언된 변수, Local Variavle</li>
+        <li>변수가 선언된 블록에서만 유효한 변수</li>
+        <li>함수가 시작 시 생성,Stack에 생성</li>
+        <li>함수가 종료되면 변수도 소멸</li>
+        <li>초기화 전 쓰레기 값을 가지고 있음</li>
+        <li>매개변수도 지역변수</li>
+    </ol>
+    <h2>2.유효범위</h2>
+    <p>C 언어 표준</p>
+    <ol>
+        <li>변수가 선언된 블록에서만 유효</li>
+        <li>함수 시작 시 생성되고 종료 시 소멸</li>
+        <li>생성 시 쓰레기 값을 가짐</li>
+        <li>매개변수도 지역변수임</li>
+        <li>블록 내에서 변수 선언이 가능(C99)</li>
+        <li>선언된 블록에서 유효</li>
+    </ol>
+    <ul>
+        <li>1983년(ANSI: American National Standard lnstitute)에서 ANSI C라는 표준안을 발표</li>
+        <li>이후 ISO 주도로 표준안을 발표(C99,C11)</li>
+    </ul>
+
+    <hr>
+    <h1>전역변수</h1>
+    <h2>1.개요</h2>
+    <ol>
+        <li>프로그램 내 전체 함수에서 유효,Gloval Variable</li>
+        <li>프로그램 시작 시 생성,데이터 영역에 생성</li>
+        <li>프로그램 종료 시 소멸</li>
+        <li>함수 밖에서 선언</li>
+        <li>자동으로 0으로 초기화</li>
+        <li>전역변수는 프로그램 전체에서 참조하므로 복잡성을 증대</li>
+        <li>모듈화의 독립성 확보가 어려움</li>
+        <li>메모리 공간을 점유</li>
+    </ol>
+    <h2>2.다중 파일</h2>
+    <p>extern을 선언하여 외부에서도 참조 가능</p>
+    <p>extern int 변수; : 외부에 선언된 변수를 참조한다는 선언문</p>
+    사진 1
+
+    <h2>핵심요약</h2>
+    <div class="well"> 
+        <h2>지역변수</h2>
+        <ul>
+            <li>변수 스코프(Scope) : 변수 참조가 가능한 유효범위</li>
+            <li>함수 내에 선언된 변수,Local Variavle</li>
+            <li>변수가 선언된 블록에서만 유효한 변수</li>
+            <li>함수가 시작 시 생성,stack에 생성</li>
+            <li>함수가 종료되면 변수도 소멸</li>
+            <li>초기화 전 쓰레기 값을 가지고 있음</li>
+            <li>매개변수도 지역변수</li>
+        </ul>
+        <p>유효범위</p>
+       <ul>
+           <li>변수가 선언된 블록에서만 유효</li>
+           <li>함수 시작 시 생성되고 종료 시 소멸</li>
+           <li>생성 시 쓰레기 값을 가짐</li>
+           <li>매개변수도 지역변수임</li>
+           <li>블록 내에서 변수 선언이 가능(C99)</li>
+           <li>선언된 블록에서 유효</li>
+       </ul>
+    </div>
+    <div class="well">
+        <h2>전역변수</h2>
+        <ul>
+            <li>프로그램 내 전체 함수에서 유효,Gloval Variable</li>
+            <li>프로그램 시작 시 생성,데이터 영역에 생성</li>
+            <li>프로그램 종료 시 소멸</li>
+            <li>함수 밖에서 선언</li>
+            <li>자동으로 0으로 초기화</li>
+            <li>전역변수는 프로그램 전체에서 참조하므로 복잡성을 증대</li>
+            <li>모듈화의 독립성 확보가 어려움</li>
+            <li>메모리 공간의 점유</li>
+            <li>다중파일<br>-extern을 선언하여 외부에서도 참조 가능</li>
+        </ul>
+    </div>
+</body>
+</html>

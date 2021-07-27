@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        body{
+            background-color: #e1f5fe ;
+        }
+        #wrap{
+            width: 1200px;
+            margin: 0 auto;
+        }
+        header{
+            width: 100%;
+            height: 100px;
+            background-color: #b3e5fc  ;
+        }
+        main{
+            width: 100%;
+            overflow: hidden;
+        }
+        .aside{
+            width: 30%;
+            height: 900px;
+            float: left;
+            background-color: #81d4fa   ;
+        }
+        .article1{
+            width: 70%;
+            height: 300px;
+            float: left;
+            background-color: #4fc3f7   ;
+        }
+        .article2{
+            width: 70%;
+            height: 300px;
+            float: left;
+            background-color: #29b6f6   ;
+        }
+        .article3{
+            width: 70%;
+            height: 300px;
+            float: left;
+            background-color: #03a9f4   ;
+        }
+        footer{
+            width: 100%;
+            height: 100px;
+            background-color: #039be5  ;
+        }
+        @media(max-width:1220px){
+            #wrap{
+                width: 100%;
+            }
+            .article1{
+                height: 450px;
+            }
+            .article2{
+                height: 450px;  
+            }
+            .article3{
+                width: 100%;
+                height: 300px;
+            }
+        }
+        @media(max-width:800px){
+            .aside{
+                width: 100%;
+                height: 200px;
+            }
+            .article1{
+                width: 50%;
+                height: 450px;
+            }
+            .article2{
+                width: 50%;
+                height: 450px;
+            }
+        }
+        @media(max-width:600px){
+            .article1{
+                width: 100%;
+                height: 300px;
+            }
+            .article2{
+                width: 100%;
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header></header>
+        <main>
+            <aside class="aside"></aside>
+            <article class="article1"></article>
+            <article class="article2"></article>
+            <article class="article3"></article>
+        </main>
+        <footer></footer>
+    </div>
+</body>
+</html>
