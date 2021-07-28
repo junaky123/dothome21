@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>문자열 이해</h1>
+    <h2>1.문자열 기초</h2>
+    <p>문자열 : 연속된 문자들의 모임</p>
+    <ol>
+        <li>문자열은 큰 따옴표("")로 표현함</li>
+        <li>문자열의 끝에는 널 문자('\0')를 함께 저장함</li>
+    </ol>
+    사진1
+    <h3>문자열 상수</h3>
+    <ul>
+        <li>값이 변경되지 않는 문자열</li>
+        <div>-"A"나"Hello World"등</div>
+        <div>-문자열 리터럴이라고도 함</div>
+    </ul>
+    <h3>문자열 변수</h3>
+    <ul>
+        <li>프로그램 수행 중에 변결될 수 있는 문자열</li>
+        <div>-문자 배열</div>
+    </ul>
+    <h2>2.문자열 선언과 초기화</h2>
+    <p>선언 : 문자 배열의 크기는 저장할 문자 수 +1 크기로 지정</p>
+    <p>초기화 : ""문자를 대입연산자에 이용</p>
+    사진2
+
+    <hr>
+
+    <h1>문자열 입출력</h1>
+    <h2>1.문자열 표준 입력</h2>
+    <h3>1)scanf()</h3>
+    <ol>
+        <li>입력된 문자열을 str배열에 저장</li>
+        <li>공백 또는 enter 전까지 입력된 문자열을 저장</li>
+        <li>함수 형식: int,scanf("%s",str)</li>
+    </ol>
+    <h3>2)gets()</h3>
+    <ol>
+        <li>공백을 포함한 문자열 입력</li>
+        <li>char*gets(char*str);</li>
+        <li>enter를'₩0'으로 변환하여 저장</li>
+    </ol>
+    <h4>정상 수행 시</h4>
+    <ul>
+        <li>문자열 리턴</li>
+    </ul>
+    <h4>오류 시</h4>
+    <ul>
+        <li>Null</li>
+        <li>읽을 문자열이 없는 경우 : EOF리턴</li>
+    </ul>
+    <h2>2.문자열 표준 출력</h2>
+    <h3>1)printf()</h3>
+    사진3
+    <h3>2)puts()</h3>
+    <ol>
+        <li>int puts(const char*str);</li>
+        <li>str 배열의 문자열을 표준 출력에 출력</li>
+        <li>배열의 '₩0'을'₩n'로 변환하여 출력</li>
+    </ol>
+    <h2>핵심 요약</h2>
+    <div class="well">
+        <h2>문자열 이해</h2>
+        <ul>
+            <li>문자열은 null로 끝나는 문자들의 집합임</li>
+            <li>문자열 저장은 문자배열을 이용함</li>
+            <li>문자열을 저장하는 문자배열의 크기는 저장할 문자 수 +1 이상 크기가 필요함</li>
+            <li>문자 배열은 선언과 동시에 ""를 이용하여 초기화가 가능함</li>
+        </ul>
+    </div>
+    <div class="well">
+        <h2>문자열 입출력</h2>
+        <ul>
+            <li>표준 입력을 통한 문자열 입력은 scanf(),gets()함수를 이용할 수 있음</li>
+            <li>scanf()는 공백이나 enter 전까지를 입력받음</li>
+            <li>gets()는 공백을 포함한 문자열 입력이 가능함</li>
+        </ul>
+    </div>
+</body>
+</html>
