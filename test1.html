@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .div1{
+            background-color: skyblue;
+            color: white;
+            padding: 10px;
+            border-radius: 10px;
+        }
+        .div1 div{
+            background-color: white;
+            color: black;
+            padding: 5px;
+            border-radius: 10px;
+        }
+        .div2{
+            background-color: orange;
+            color: white;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        .div2 div{
+            background:white;
+            color: black;
+            border-radius: 10px;
+            padding: 5px;
+        }
+        .div3{
+            background-color: red;
+            color: white;
+            border-radius: 10px;
+            padding: 10px;
+        }
+        .div3 div{
+            background:white;
+            color: black;
+            border-radius: 10px;
+            padding: 5px;
+        }
+       
+    </style>
+</head>
+<body>
+    <h1>매개변수</h1>
+    <h2>1.개념 이해</h2>
+    <p>함수에 전달하는 값[매개변수(Parameter),인자(Argument)]<br>->함수 호출 시 함수로 값을 전달하는 목저으로 이용</p>
+    사진1
+    <div class="div1">형식매개변수와 실매개변수</div>
+    <ul>
+        <li>형식매개변수 (Formal Parameter) : 함수 정의에서 기술되는 매개변수 목록</li>
+        <li>실매개변수(Real Parameter) : 함수 호출에서 기술되는 값,인자(Argument)</li>
+    </ul>
+    <pre>
+        <code>
+            #include &lt;stdio.h&gt;
+            void add ( int a,int b) <span style="color: seagreen;">---형식매개변수</span>
+            {
+                a+=b;
+                pintf("%d",a);
+            }
+
+            int main()
+            {
+                int x=5,y=3;
+                add(x,y;)  <span style="color: seagreen;">---실매개변수</span>
+                redturn 0;
+            }
+        </code>
+    </pre>
+    <h2>2.호출 방식</h2>
+    <div class="div1">Call by value(값에 의한 호출)
+        <div>인자의 값을 함수 정의에 있는 매개변수로 복사해서 전달하는 방식</div>
+    </div>
+    <br><br>
+    <div class="div2">Call by Reference(참조에 의한 호출)
+        <div>■인자의 참조값을 함수 정의에 있는 매개변수로 전달하는 방식 <br>■변수의 값을 복사해서 전달하는 대신 변수의 주소를 전달하는 방식<br>■호출된 함수에서 값을 호출한 곳으로 리턴의 용도로 사용 가능</div>
+    </div>
+    사진2
+    <hr>
+    <h1>다양한 인자 전달</h1>
+    <h2>1.배열전달</h2>
+    <ol>
+        <li>배열은 포인터 전달 방법을 이용</li>
+        <li>함수의 매개변수는 배열의 원소에 대한 포인터형으로 선언</li>
+    </ol>
+    <h2>2.구조체 전달</h2>
+    사진3
+    <div class="div3">구조체 전달 시 포인터 전달의 장점
+        <div>주소 보관을 위한 4바이트만 사용함</div>
+    </div>
+
+    <h2>핵심요약</h2>
+    <div class="well">
+        <h2>매개변수</h2>
+        <ul>
+            <li>형식매개변수란 함수의 원형에 기술되는 매개변수 리스트를 말함</li>
+            <li>실매개변수는 함수 호출 시 기술되는 매개변수를 말함</li>
+            <li>값에 의한 호출은 값만을 전달하고 함수에서 복사해서 사용함</li>
+            <li>참조의 의한 호출은 참조할 정보,즉 주소를 전달하여 함수에서 주소로 참조하는 전달 방식임</li>
+        </ul>
+    </div>
+    <div class="well">
+        <h2>다양한 인자 전달</h2>
+        <ul>
+            <li>배열을 함수의 매개변수로 전달할 떄는 배열명을 전달하영 배열의 시작 주소가 전달되도록 함</li>
+            <li>구조체는 구조체 자체를 전달하는 것보다 구조체 시작 주소를 전달하여 함수에서 주소로 참조하도록 하는 것이 좋음</li>
+            <li>구조체난 구조체 배열을 참조에 의한 호출로 매개변수를 전달하면 메모리 사용에 유리함</li>
+        </ul>
+    </div>
+</body>
+</html>

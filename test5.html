@@ -6,143 +6,175 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        .box{
-            border: solid 1px;
-        }
-        .box1{ 
-            width: 220px;
-            height: 100px;
-            background-color: pink;
-            text-align:center;
+        .div1{
+            background-color: skyblue;
             color: white;
-            font-size: 18px;
-            font-weight: bold;
-        }
-        .box1-iner{ 
-            width: 200px;
-            height: 60px;
-            line-height: 60px;
-            background-color: #fff;
-            text-align:center;
-            color: black;
-            font-size: 18px;
-            font-weight: bold;
-            margin-left: 10px;
-            margin-top: 10px;
-        }
-        .box2{ 
-            width: 220px;
-            height: 100px;
-            margin-left: 270px;
-            margin-top: -100px;
-            background-color: orange;
-            text-align:center;
-            color: white;
-            font-size: 18px;
-            font-weight: bold;
-        }
-        .box2-iner{ 
-            width: 200px;
-            height: 60px;
-            line-height: 60px;
-            background-color: #fff;
-            text-align:center;
-            color: black;
-            font-size: 18px;
-            font-weight: bold;
-            margin-left: 10px;
-            margin-top: 10px;
-        }
-        .wntjrans{
-            border: solid black 1px;
-            margin-right: 500px;
+            border-radius: 10px;
+            padding: 10px;
         }
     </style>
 </head>
 <body>
-    <h1>1.main()함수</h1>
-    <h2>1)함수의 정의</h2>
-    <h3>(1)정의</h3>
-    <ul>
-        <span>함수</span>
-        <li>입력에 대해 연산을 수행하고 결과를 출력</li>
-        <li>프로그램에서 처리할 내용을 모아두는 묶음</li>
-    </ul>
-    <h3>(2)main()함수</h2>
-        <ol>
-            <li>C언어는 하나 이상 함수로 이루어짐</li>
-            <li>실행 가능한 하나의 프로그램에는 반드시 하나의 main()함수가 존재함</li>
-            <li>C언어는 main()함수를 수행하는 언어임</li>
-        </ol>      
-    <h2>2)기본구조</h2>
-    <h3>(1)프로그램 기본 틀</h3>
+    <h1>프로그램 설계</h1>\
+    <h2>1.프로그램 기능 정의</h2>
+    <table>
+        <tr>
+            <td>프로그램명</td>
+            <td>성적 처리 프로그램/td>
+        </tr>
+        <tr>
+            <td>주요기능</td>
+            <td>학생들의 성적을 입력받고 평균을 구하여 성적순으로 출력하는 프로그램</td>
+        </tr>
+        <tr>
+            <td>자료구조</td>
+            <td>이름,국어,영어,수학,평균</td>
+        </tr>
+        <tr>
+            <td>요구사항</td>
+            <td>학색 이름은 10자 이내<br>최대 20명의 학생 성적 처리 <br>평균값 자동계산 <br>메뉴 방식 UI</td>
+        </tr>
+    </table>
 
-    <h3>(2)코드 작성 준비</h3>
-    <ol>
-        <li>소문자로 작성해야 함</li>
-        <li>식별자는 대소문자를 구분</li>
-        <li>함수의 시작과 끝은 {}로 구분</li>
-        <li>하나의 문장 끝은;</li>
-    </ol>
-<hr>
-    <h1>2.출력문장 구현</h1>
-    <h2>1)주석문</h2>
-    <ul>
-        <span>주석문</span>
-        <li>프로그램 내에서 코드 등을 설명하기 위한 용도로 사용</li>
-        <li>프로그래머에게만 보이고 컴퓨터에서는 처리되지 않는 문장</li>
-    </ul>
+    <h2>2.자료구조 정의</h2>
+    <div class="div1">자료구조 : 이름,국어,영어,수학,평균</div>
+    <pre>
+        <code>
+            struct sungjuk {
+                chart name[10];
+                int kor,eng,mat;
+                double aavg;
+            }
+        </code>
+    </pre>
 
-    <div class="box1">여러줄 주석
-        <div class="box1-iner">/* ....*/</div>
-    </div>
+    <h2>3.메뉴 구조</h2>
+    사진1
 
-    <div class="box2">한줄 주석
-        <div class="box2-iner">//</div>
-    </div>
-
-    <br>
-
-    <div class="wntjrans">
-        <div style="color: teal;">/*주석문이란 프로그램 내에서</div>
-        <div style="color: teal;">  코드 등을 설명하기 위한 용도로 사용한다*/</div>
-        <div>#include &lt;stdio.h&gt;</div>
-        <div>int main()</div>
-        <div>{</div>
-        <div>printf("hello");</div>
-        <div>....</div>
-        <div>}</div>
-        <div style="color: teal;">//처음으로 작성한 코드</div>
-    </div>
-
-    <h2>2)출력문</h2>
-    <ol>
-        <li>printf("");</li>
-        <li>표준출력장치(화면)에""에 지정한 글자를 나타내는 함수</li>
-        <li>헤더파일 stdio,h에 선언</li>
-    </ol>
-    <p>이스케이프 문자 (Escape Sequence)</p>
-    
     <hr>
 
+    <h1>코드 분석</h1>
+    <h2>1.헤더 파일</h2>
+    사진2
+    <pre>
+        <code>
+            #include &lt;stdio.h&gt;
+
+            #define ST_NUM 20
+            #define NAME_LENGTH 10
+
+            typedef struct sungjuk{
+                    char name [NAME_LENGTH 10];
+                    int kor,eng,mat;
+                    double avg;
+            }SUNGJUK;
+
+            int inscore(SUNGJUK*,int);
+            void outScore(SUNGJUK*,int);
+            void sortScore(SUNGJUK*,int);
+        </code>
+    </pre>
+
+    <h2>2.main함수</h2>
+    <pre>
+        <code>
+            int main()
+            {
+                    int sel,totalSCnt=0;
+                    SUNGJUK student[ST_NUM];
+                    while(1){
+                            puts("₩n월하는 메뉴를 선택하세요");
+                            puts("1.성적입력");
+                            puts("2.성적순출력");
+                            puts("0.종료");
+                            scanf("%d",&sel);
+                            fflush(stdin);
+                            swiych(sel){
+                        
+                            case 1:totalSCnt=inScore(student,totalSCnt);break;
+                            case 2:outScore(student,totalSCnt);break;
+                            case 0:return 0;
+                            default:puts("0~3 사이의 메뉴 번호를 선택하세요");
+                            }
+                    }
+            }
+        </code>
+    </pre>
+
+    <h2>3.입출력함수</h2>
+    <pre>
+        <code>
+            #include "scoreHeader h"
+            int inScore(SUNGJUK*st,int cat)
+            {
+                        char op;
+                        do{
+                                fflush(stdin);
+                                printf("₩n이름:");
+                                gets(st[cnt].name);
+                                printf("국어:");
+                                scaanf("$d,&st[cnt].kor");
+                                printf("영어:");
+                                scaanf("$d,&st[cnt].eng");
+                                printf("수학:");
+                                scaanf("$d,&st[cnt].mat");
+                                puts("계속 입력하시겠습니까?(y/n");
+                                fflush(stdin);
+                                op=getc(stdin);
+                                st[cnt].avg=(double)(st[cnt].kor+st[cnt].eng+st[cnt].mat)/3.0;
+                                cnt++
+                        }while(op!='n');
+                        return cnt;
+            }
+        </code>
+        <code>
+            void sortScore(SUNGJUK*st,int cat)
+            {
+                        SUNGJUK temp;
+                        int i,j;
+                for(i=0;i&lt;cnt-1;i++)
+                {
+                    for(j=0; j&lt;(cnt-i)-1;j++)
+                    {
+                        if(st[j].avg&lt;[j+1].avg)
+                        {
+                            temp=st[j];
+                            st[j]=st[j+1];
+                            st[j+1]=temp;
+                        }
+                    }
+                }
+            }
+        </code>
+        <code>
+            void outScore(SUNGJUK*st,int cat)
+            {
+                    int i;
+                    sortScore(st,cnt);
+                    printf("₩n--------------------------------");
+                            printf("₩n 순위 이름 국어 영어 수학 평균");
+                            printf("₩n--------------------------------₩n");
+                    for(i=0;i&lt;cnt;i++)
+                    {
+                                printf("%2d %10s %5d %5d %5d %3.1f₩n",i+1,
+            st[i].name,st[i].kor,st[i].eng,st[i].mat,st[i].avg);
+                    }
+            }
+        </code>
+    </pre>
+    <hr>
     <h2>핵심요약</h2>
     <div class="well">
-        <h2>main()함수 알아보기</h2>
+        <h2>프로그램 설계</h2>
         <ul>
-            <li>c언어는 헤더파일과 함수로 구성됨</li>
-            <li>하나의 실행 프로그램에는 하나의 main()함수가 반드시 존재함</li>
-            <li>C언어는 소문자로 문장을 기술해야 함</li>
-            <li>식별자는 대소문자를 구분함</li>
-            <li>하나의 문장 끝에는 반드시;을 기술함</li>
+            <li>프로그램 개발 시 요구사항 분석 후 적절한 자료구조를 선택하는 것이 중요함</li>
+            <li>다양한 데이터 타입을 묶어서 처리할 필요가있는 경우 적절한 자료구조는 구조체임</li>
         </ul>
     </div>
-
     <div class="well">
-        <h2>출력문장 구현하기</h2>
         <ul>
-            <li>표준 출력 문장으로 많이 사용되는 함수로 printf();가 있음</li>
-            <li>출력할 내용을 ""내에 기술함</li>
-            <li>newlinem,tab,form feed 등과 같은 이스케이프 문자가 있음</li>
+            <li>매크로 상수는 프로그램의 가독성을 높이고 유지보수를 편리하게 하는 장점이 있음</li>
+            <li>사용자 정의 헤더 파일은""를 이용하여 기술함</li>
         </ul>
     </div>
 </body>

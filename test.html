@@ -5,23 +5,127 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        .pre code{
+            background: #e0e0e0 
+        }
+    </style>
 </head>
 <body>
-    <h2>UI/UX 콘셉트 도출</h2>
+    <h1>공용체</h1>
+    <h2>1.공용체 활용</h2>
+    <p>동일한 저장 장소에 여러 데이터 타입을 저장하는 자료구조</p>
+    <ol>
+        <li>멤버들이 <span style="color: red;">메모리를 공유해서 사용</span>하는 기법</li>
+        <li>공용체의 크기는 공용체의 멤버 중 <span style="color: red;">가장 크기가 큰 멤버에 의해 결정</span></li>
+        <li>공용채 변수를 초기화할 떄는 첫 번째 멤버의 초기값만 지정</li>
+    </ol>
+    사진1
+    <p>공용체의 멤버에 접근할 때도'.'와'->'연산자를 사용함</p>
+    <pre class="pre">
+        <code>
+            uniom sungjuk std;
+
+            std.grade ='B';
+
+            std.score ='97';
+        </code>
+        <code>
+            union sungjuk std;
+            union sungjuk *pu = &std;
+
+            pu -> grade = 'B';
+            pu -> scord = 97;
+        </code>
+    </pre>
+    사진2
+    사진3
+    <h2>2.비트필드</h2>
+    <ol>
+        <li>구조체가 가진 멤버를 비트 단위로 사용</li>
+        <li>비트필드 정의</li>
+        사진4
+        <li>메모리에 할당할 때,첫 번쨰 멤버를 <span style="color: red;">최하위 비트에서부터 할당</span> </li>
+        <li>비트필드의 멤버에 표현 가능한 범위 밖의 값을 저장하면 오버플로우가 발생</li>
+        <li>비트필드를 정의할 떄는 중간에 일부 비트를 비워두고 멤버를 특정 비트에 할당할 수 있음</li>
+        <pre class="pre">
+            <code>
+                struct product
+                    unsigned int code:6;  <span style="color: red;">상품코드 6비트</span>
+                    unsigned int:10;    <span style="color: seagreen;">10비트는 사용하지 않음</span>
+                    unsigned int color:5;   <span style="color: red;">색상 5비트</span>
+                    unsigned int:5;     <span style="color: seagreen;">5비트는 사용하지 않음</span>
+                    unsigned int size:3;
+                };
+            </code>
+        </pre>
+    </ol>
+    <ul>
+        <h2>리틀 엔디안과 빅 엔디안</h2>
+        <li>리틀 엔디안 : 최하위 바이트부터 메모리에 저장하는 방식 - 인텔 계열의 CPU</li>
+        <li>빅 엔디안 : 최상위 바이트부터 메모리에 저장하는 방식 -모토로라 계열의 CPU</li>
+    </ul>
+
+    <hr>
+
+    <h1>열거체</h1>
+    <h2>1.열거체 활용</h2>
+    사진5
+    <p>나열된 정수 값 중 하나를 갖는 정수형의 일종</p>
+    <pre>
+        <code>
+            enum week { sun,mon,tue,wed,thu,fri,sat };
+            <span style="color: seagreen;">sun은0으로,mon은1로,...sat은6으로 정의됨</span>
+        </code>
+        <code>
+            enum color { red=10,green = 20, blue =30 };
+            <span style="color: seagreen;">red는10,green은,blue는 30으로 정의됨</span>
+        </code>
+    </pre>
+    <ul>
+        <li>일종의 사용자 정희형</li>
+        <li>열거체 변수에는 열거체 정의에 나열된 열거 상수 중 하나를 저장하고 사용</li>
+        <pre>
+            <code>
+                enum week weekday; <span style="color: seagreen;">열거체형 변수를 선언함</span>
+                weekday = mon; <span style="color: seagreen;">mon 열거 상수는 한눈에 월요일이라는 것을 알 수 있음</span>
+            </code>
+        </pre>
+        <li>열거 상수만 정수형 상수로 정의할 수도 있음 - 프로그램의 가독성을 향상시키기 위해 사용</li>
+        <pre>
+            <code>
+                enum color { red=10,green = 20, blue =30 };
+            </code>
+        </pre>
+    </ul>
+    
+    <hr>
+
+    <h2>2.typedef</h2>
+    <h3>1)재정의</h3>
+    <ol>
+        <li>데이터 타입의 이름을 <span style="color: red;">새로운 이름</span>으로 재정의</li>
+        <li>코딩의 편리성 증대</li>
+        <li>프로그램의 시스템 간 호환성 향상</li>
+    </ol>
+    사진6
+    <h3>2)편리성</h3>
+    사진7
+    <h2>핵심요약</h2>
     <div class="well">
-        도출된 아이디에이션(ldeation)의 프로토타입 검증 결과에 따라서 확정된 UI/UX콘셉트를 결정할 수 있다. <br>
-        도출된 UI/UX 콘셉트를 반영하여 목표 고객인 페르소나(persona)를 추출할 수 있다<br>
-        UI 설게를 위해서 UI/UX 콘셉트에 적합한 시나리오 (scenario)를 작성할 수 있다
+        <h2>공용체</h2>
+        <ul>
+            <li>공용체는 멤버들이 메모리를 공유해서 사용하는 자료구조임</li>
+            <li>빝필드는 구조체 멤버를 비트 단위로 할당하여 사용함</li>
+        </ul>
     </div>
-
-        <h3>페르소나(persona)</h3>
-        <p> 페르소나는 사용자의 목적(goals)과 행동(behaviors)을 대표하는 실제 타깃 사용자 그룹을 가상의 캐릭터(artificial person and archetypical users)로 형상화하는 목적 지향적인 (goal-directed) 인터랙션 디자인의 방법이다. 핵심적인 캐릭터의 구성요소는 니즈 (motivations and needs), 목적, 환경(contexts), 행동패턴, 숙련 수준(skills), 태도(attitudes), 문제점(pain points) 등이다. 
-            이러한 구성요소는 사용자 리서치의 데이터를 기반으로 기술 한다. 또한 인터랙션 디자인, 인포메이션 아키텍처 디자인(IA), 비주얼 디자인 등을 수행할 때 주요한 의사결정의 준거점으로 활용하는 전략 산출물이다.
-        </p>
-
-        <h3>시나리오 디자인(scenario design)</h3>
-        <p>시나리오 디자인은 일련의 사건에서 언제, 어디서, 어떻게 페르소나가 행동하는지 묘사하는 이야기이다. 이 이야기는 특정한 환경(particular contexts)에서 페르소나의 목적을 달성 하기 위해서 미디어와의 인터랙션을 어떻게 하는지 묘사한다. 
-            또한 이야기는 페르소나의 관점에서 기술하며, 미래에 발생할 사용 용례(activities)를 서술한다.
-        </p>
+    <div class="well">
+        <h2>열거체</h2>
+        <ul>
+            <li>열거체는 정수형의 일종으로 변수가 가질 수 있는 값을 열거 상수로 나열하는 것임</li>
+            <li>typedef는 기존의 데이터형에 새로운 이름을 만드는 기능임</li>
+            <li>typedef는 호환성과 가독성을 향상시키는 목적으로 사용함</li>
+        </ul>
+    </div>
 </body>
 </html>
