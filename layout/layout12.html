@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        #header{
+            height: 100px;
+            background-color: #efebe8;
+        }
+        #banner{
+            height: 100px;
+            background-color: #bdaaa4;
+        }
+        #main{
+            height: 800px;
+            background-color: #8c6e63;
+        }
+        #footer{
+            height: 100px;
+            background-color: #4f332f;
+        }
+        .container{
+            width: 1200px;
+            height: inherit;
+            background-color: rgb(0,0,0,0.2);
+            margin: 0 auto;
+        }
+        .container .aside{
+            width: 400px;
+            height: 600px;
+            background-color: #795547;
+            float: left;
+        }
+        .container .section{
+            width: 800px;
+            height: 600px;
+            background-color: #6d4d42;
+            float: left;
+        }
+        .container .article{
+            width: 1200px;
+            height: 200px; 
+            background-color: #5d4038;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <div id="header">
+            <div class="container"></div>
+        </div>
+        <div id="banner">
+            <div class="container"></div>
+        </div>
+        <div id="main">
+            <div class="container">
+                <div class="aside"></div>
+                <div class="section"></div>
+                <div class="article"></div>
+            </div>
+        </div>
+        <div id="footer">
+            <div class="container"></div>
+        </div>
+    </div>
+</body>
+</html>
