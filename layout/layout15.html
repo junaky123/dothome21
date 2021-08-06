@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            padding: 0;
+            margin: 0;
+        }
+        body{
+            background-color: #e3f2fd;
+        }
+        #wrap{
+            width: 1200px;
+            margin: 0 auto;
+        }
+        header{
+            width: 100%;
+            height: 100px;
+            background-color: #bbdefb;
+        }
+        nav{
+            width: 100%;
+            height: 100px;
+            background-color: #90caf9;
+        }
+        main{
+            overflow: hidden;
+        }
+        section{
+            width: 30%;
+            height: 900px;
+            background-color: #64b5f6;
+            float: left;
+        }
+        article{
+            width: 70%;
+            height: 300px;
+            background-color: #42a5f5;
+            float: left;
+        }
+        aside{
+            width: 70%;
+            height: 300px;
+            background-color: #2196f3;
+            float: left;
+        }
+        address{
+            width: 70%;
+            height: 300px;
+            background-color: #1e88e5;
+            float: left;
+        }
+        footer{
+            width: 100%;
+            height: 100px;
+            background-color: #1976d2;
+            float: left;
+        }
+        @media(max-width:1200px){
+            #wrap{
+                width: 100%;
+            }
+            address{
+                width: 100%;
+            }
+            section{
+                height: 600px;
+            }
+        }
+        @media(max-width:600px){
+            section{
+                width: 100%;
+            }
+            article{
+                width: 100%;
+                height: 300px;
+            }
+            aside{
+                width: 100%;
+            }
+            address{
+                width: 100%;
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="wrap">
+        <header></header>
+        <nav></nav>
+        <main>
+            <section></section>
+            <article></article>
+            <aside></aside>
+            <address></address>
+        </main>
+        <footer></footer>
+    </div>
+</body>
+</html>
