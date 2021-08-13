@@ -678,25 +678,24 @@
         //02
         {
             const date = new Date();
-            const locale = date.toLocaleString
+            const locale = date.toLocaleString();
 
             document.querySelector(".sample02_N1").innerHTML = "1";
-            document.querySelector(".sample02_Q1").innerHTML = "new Data()";
-            document.querySelector(".sample02_M1").innerHTML = "toLocaleString();";
+            document.querySelector(".sample02_Q1").innerHTML = "new Date()";
+            document.querySelector(".sample02_M1").innerHTML = "toLocaleString()";
             document.querySelector(".sample02_R1").innerHTML = locale;
 
-            const localeDate = date.toLocaleDateString
+            const localeDate = date.toLocaleDateString();
 
             document.querySelector(".sample02_N2").innerHTML = "2";
-            document.querySelector(".sample02_Q2").innerHTML = "new Data()";
-            document.querySelector(".sample02_M2").innerHTML = "toLocaleDateString();";
+            document.querySelector(".sample02_Q2").innerHTML = "new Date()";
+            document.querySelector(".sample02_M2").innerHTML = "toLocaleDateString()";
             document.querySelector(".sample02_R2").innerHTML = localeDate;
 
-            const localeTime = date.toLocaleTimeString
-
+            const localeTime = date.toLocaleTimeString();
             document.querySelector(".sample02_N3").innerHTML = "3";
-            document.querySelector(".sample02_Q3").innerHTML = "new Data()";
-            document.querySelector(".sample02_M3").innerHTML = "toLocaleTimeString();";
+            document.querySelector(".sample02_Q3").innerHTML = "new Date()";
+            document.querySelector(".sample02_M3").innerHTML = "toLocaleTimeString()";
             document.querySelector(".sample02_R3").innerHTML = localeTime;
         }
         //03
