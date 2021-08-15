@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>변환 라이브러리</h1>
+    <h2>데이터 변환</h2>
+    <h3>함수</h3>
+    <ul>
+        <li>atoi : 문자열을 정수(int)로 변환</li>
+        <li>atof : 문자열을 실수(double)로 변환</li>
+        <li>strtof : 실수 문자열을 float형 실수로 변환</li>
+        <li>strtod : 실수 문자열을 double형 실수로 변환</li>
+    </ul>
+    1
+    <h2>활용 예제</h2>
+    <h3>기능</h3>
+    <ul>
+        <li>근무일 입력 시 급여 계산</li>
+    </ul>
+    <h3>요구사항</h3>
+    <ul>
+        <li>급여 계산식 : 급여 = 근무일 * (근무연수 * 1000)</li>
+        <li>사원번호에서 입사연도를 자동으로 추출하여 급여 계산</li>
+        <li>사원번호체계 : 총 10자리 입사연도 + 일련번호-부서코드 (예 20080123-02)</li>
+    </ul>
+    2
+    <hr>
+    <h2>랜덤값 발생</h2>
+    3
+    5
+    <h2>활용 예제</h2>
+    <h3>기능</h3>
+    <ul>
+        <li>학번에 따라 3개의 그룹으로 분류</li>
+    </ul>
+    <h3>요구 사항</h3>
+    <ul>
+        <li>10명의 학생을 학번에 따라 랜덤하게 3개의 그룹으로 분류</li>
+        <li>학번을 시드로 랜덤하게 생성하기</li>
+    </ul>
+    <h2>핵심요약</h2>
+    <div class="well">
+        <h2></h2>
+        <ul>
+            <li>숫자 형태의 문자열을 변환하는 라이브러리 함수는 stdlib.h 헤더파일에 선언되어 있음</li>
+            <li>숫자 형태의 문자열을 정수형으로 변환하는 함수 : atoi</li>
+            <li>숫자 형태의 문자열을 실수형으로 변환하는 함수 : atof</li>
+        </ul>
+    </div>
+    <div class="well">
+        <h2></h2>
+        <ul>
+            <li>랜덤값을 생성하는 라이브러리 함수 : rand</li>
+            <li>rand함수는 실행 시 동일한 랜덤값을 생성하므로 시드함수를 이용해야 함</li>
+            <li>rand함수 사용 시 시드함수로 srand가 있음</li>
+        </ul>
+    </div>
+</body>
+
+</html>

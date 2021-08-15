@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>배열</h1>
+    <ul>
+        <li>배열(array)이란 연관된 데이터를 모아서 통으로 관리하기 위해서 사용하는 데이터 타입이다. </li>
+        <li>변수가 하나의 데이터를 저장하기 위한 것이라면 배열은 여러 개의 데이터를 하나의 변수에 저장하기 위한 것이라고 할 수 있다.</li>
+    </ul>
+    <pre>
+        <code>
+            var name = 'egoing'
+            alert(name);
+        </code>
+    </pre>
+    <p>변수 name에는 문자 egoing이 할당되었다. 이제부터 name을 호출하면 문자 egoing을 사용할 수 있다.</p>
+    <h2>배열의 생성</h2>
+    
+    <ul>
+        <li>여러 개의 데이터를 하나의 변수에 담아서 관리할 수 있는 방법</li>
+        <li>대괄호([])는 배열을 만드는 기호다. </li>
+        <li>대괄호 안에 데이터를 콤마(,)로 구분해서 나열하면 배열이 된다.</li>
+    </ul>
+    <pre>
+        <code>
+            var member = ['egoing', 'k8805', 'sorialgi']
+        </code>
+    </pre>
+    <p>하나의 변수에 3개의 데이터를 담았다. 각각의 데이터를 원소(Element)이라고 부른다. </p>
+    <pre>
+        <code>
+            var member = ['egoing', 'k8805', 'sorialgi']
+            alert(member[0]);       출력값:egoing
+            alert(member[1]);       출력값:k8805
+        alert(member[2]);           출력값:sorialgi
+        </code>
+    </pre>
+    <ul>
+        <li>배열에 담겨있는 값을 가져올 때는 대괄호 안에 숫자를 넣는다. </li>
+        <li>이 숫자를 색인(index)라고 부르고 0부터 시작한다. </li>
+        <li>첫번째 원소(egoing)를 가져오려면 대괄호 안에 0을 넣어주어야 한다는 것이다. </li>
+        <li>두번째는 1, 세번째는 2를 입력한다. </li>
+        <li>이 값을 이용해서 배열에 저정된 값을 가져올 수 있다.</li>
+    </ul>
+    <h2>배열이 없다면</h2>
+    <pre>
+        <code>
+            function get_member1(){
+                return 'egoing';
+            }
+            document.write(get_member1());
+             
+            function get_member2(){
+                return 'k8805';
+            }
+            document.write(get_member2());
+             
+             
+            function get_member3(){
+                return 'sorialgi'
+            }
+            document.write(get_member3());
+        </code>
+        <p>하나의 함수는 하나의 값만을 반환할 수 있기 때문에 위와 같이 각각의 회원정보를 반환하는 함수를 만들었다.</p>
+        <code>
+            function get_members(){
+                return ['egoing', 'k8805', 'sorialgi'];
+            }
+            var members = get_members();
+            document.write(members[0]);
+            document.write(members[1]);
+            document.write(members[2]);
+        </code>
+        <p>맴버를 담고 있는 배열를 반환하고 있다.</p>
+    </pre>
+    <h2>배열의 사용</h2>
+    <p>배열의 진가는 반복문과 결합했을 때 나타난다. 반복문으로 리스트에 담긴 정보를 하나씩 꺼내서 처리 할 수 있기 때문이다. </p>
+    <pre>
+        <code>
+            function get_members(){
+                return ['egoing', 'k8805', 'sorialgi'];
+            }
+            members = get_members();
+            // members.length는 배열에 담긴 값의 숫자를 알려준다. 
+            for(i = 0; i &lt; members.length; i++){
+                // members[i].toUpperCase()는 members[i]에 담긴 문자를 대문자로 변환해준다.
+                document.write(members[i].toUpperCase());   
+                document.write('&lt;br /&gt;');
+            }
+        </code>
+        <code>
+            출력값
+            egoing
+            k8805
+            sorialgi
+        </code>
+    </pre>
+    <ul>
+        <li>반복문을 이용해서 배열 members의 내용을 하나씩 꺼낸 후에 이름의 첫글자를 대문자로 변경한 후에 출력하고 있다.</li>
+        <li>배열이란 연관된 정보를 하나의 그룹으로 관리하기 위해서 사용한다.</li>
+        <li>정보를 처리 할 때는 반복문을 이용한다.</li>
+    </ul>
+    <h2>배열의 제어</h2>
+    <ul>
+        <li>배열은 복수의 데이터를 효율적으로 관리, 전달하기 위한 목적으로 고안된 데이터 타입이다.</li>
+        <li> 따라서 데이터의 추가/수정/삭제와 같은 일을 편리하게 할 수 있도록 돕는 다양한 기능을 가지고 있다.</li>
+    </ul>
+    <h2>배열의 크기</h2>
+    <pre>
+        <code>
+            var arr = [1, 2, 3, 4, 5];           결과는 5이다.
+            alert(arr.length);
+        </code>
+    </pre>
+    <h2>배열의 조작</h2>
+    <h3>추가</h3>
+    <pre>
+        <code>
+            var li = ['a', 'b', 'c', 'd', 'e'];
+            li.push('f');
+            alert(li);
+        </code>
+    </pre>
+    <p>push는 인자로 전달된 값을 배열(li)에 추가하는 명령이다.</p>
+    <p>배열 li의 값은 a, b, c, d, e, f가 됐다.</p>
+    <pre>
+        <code>
+            var li = ['a', 'b', 'c', 'd', 'e'];
+            li = li.concat(['f', 'g']);
+            alert(li);
+        </code>
+    </pre>
+    <p>concat은 인자로 전달된 값을 추가하는 명령이다.</p>
+    <pre>
+        <code>
+            var li = ['a', 'b', 'c', 'd', 'e'];
+            li.unshift('z');
+            alert(li);
+        </code>
+    </pre>
+    <p>unshift는 인자로 전달한 값을 배열의 첫번째 원소로 추가하고 배열의 기존 값들의 색인을 1씩 증가시킨다.</p>
+    <p>배열 li는 z, a, b, c, d, e가 됐다.</p>
+    <pre>
+        <code>
+            var li = ['a', 'b', 'c', 'd', 'e'];
+            li.splice(2, 0, 'B');
+            alert(li);
+        </code>
+        <p>splice는 첫번째 인자에 해당하는 원소부터 두번째 인자에 해당하는 원소의 숫자만큼의 값을 배열로부터 제거한 후에 리턴한다.</p>
+        <p>세번째 인자부터 전달된 인자들을 첫번째 인자의 원소 뒤에 추가한다.</p>
+    </pre>
+    <h2>제거</h2>
+    <pre>
+        <code>
+            var li = ['a', 'b', 'c', 'd', 'e'];         
+            li.shift();
+            alert(li);                                   결과는 b, c, d, e 다.
+        </code>
+    </pre>
+    <p>shift를 사용하면 배열의 첫번째 원소를 제거</p>
+    <pre>
+        <code>
+            var li = ['a', 'b', 'c', 'd', 'e'];          결과는 a, b, c, d 다.
+            li.pop();
+            alert(li);
+        </code>
+    </pre>
+    <p>배열 끝점의 원소를 배열 li에서 제거한다. 이때는 pop를 사용한다.</p>
+    <h2>정렬</h2>
+    <pre>
+        <code>
+            var li = ['c', 'e', 'a', 'b', 'd'];          결과는 a, b, c, d, e 다.
+            li.sort();
+            alert(li);
+        </code>
+    </pre>
+    <p>sort 정렬하는 방법이다</p>
+    <pre>
+        var li = ['c', 'e', 'a', 'b', 'd'];
+        li.reverse();
+        alert(li);
+    </pre>
+    <p>reverse는 역순으로 정렬하고 싶을 때</p>
+</body>
+</html>

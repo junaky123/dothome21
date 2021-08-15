@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>조건문</h1>
+    <h2>Boolean</h2>
+    <ul>
+        <li>비교 연산의 결과로 참(true)이나 거짓(false)을 얻을 수 있음</li>
+        <li>불린(Boolean) : 숫자와 문자처럼 언어에서 제공하는 데이터 형</li>
+        <li>불린으로 올 수 있는 값은 true, false 두가지</li>
+        <li>불린은 조건문에서 핵심적인 역할 담당</li>
+    </ul>
+    <h2>조건문</h2>
+    <p>조건문이란 주어진 조건에 따라서 에플리케이션을 다르게 동작하도록 하는 것이다.</p>
+    <h1>조건문의 문법</h1>
+    <h2>if</h2>
+    <ul>
+        <li>조건문은 if로 시작</li>
+        <li>if(조건){실행문}</li>
+        <li>조건이 될 수 있는 값 : Boolean</li>
+        <li>Boolean의 값이 true일 때 중괄호 구문이 실행</li>
+    </ul>
+    <pre>
+        <code>
+            if(true){
+                alert('result : true');
+            }
+        </code>
+    </pre>
+    <p>실행결과는 'result : true'다. if 뒤에 true가 왔기 때문이다.</p>
+    <pre>
+        <code>
+            if(false){
+                alert('result : true');
+            }
+        </code>
+    </pre>
+    <p>아무것도 출력하지 않을 것이다. if 뒤에 false가 왔기 때문이다.</p>
+    <pre>
+        <code>
+            if(true){
+                alert(1);
+                alert(2);
+                alert(3);
+                alert(4);
+            }
+            alert(5);
+        </code>
+    </pre>
+    <p>결과는 12345를 출력할 것이다.</p>
+    <pre>
+        <code>
+            if(false){
+                alert(1);
+                alert(2);
+                alert(3);
+                alert(4);
+            }
+            alert(5);
+        </code>
+    </pre>
+    <p>결과는 5만 출력될 것이다.</p>
+    <ul>
+        <li> if 문의 조건이 참이면 중괄호의 시작({}부터 중괄호의 끝(})까지의 구간이 실행되기 때문이다.</li>
+        <li>거짓이면 중괄호 구간이 실행되지 않기 때문에 alert(5); 구문만 실행된 것이다.</li>
+    </ul>
+    <h2>else</h2>
+    <pre>
+        <code>
+            if(true){
+                alert(1);
+            } else {
+                alert(2);
+            }
+        </code>
+    </pre>
+    <p>if만으로는 좀 더 복잡한 상황을 처리하는데 부족하다. 아래 예제를 보자. 결과는 1이다.</p>
+    <pre>
+        <code>
+            if(false){
+                alert(1);
+            } else {
+                alert(2);
+            }
+        </code>
+    </pre>
+    <p>결과는 2다.</p>
+    <ul>
+        <li>if문의 조건이 true라면 if의 중괄호 구간이 실행되고, false라면 else 이후의 중괄호 구간이 실행된다. </li>
+        <li>즉 else는 주어진 조건이 거짓일 때 실행할 구간을 정의하는 것이다.</li>
+    </ul>
+    <h2>else if</h2>
+    <pre>
+        <code>
+            if(false){
+                alert(1);
+            } else if(true){
+                alert(2);
+            } else if(true){
+                alert(3);
+            } else {
+                alert(4);
+            }
+        </code>
+    </pre>
+    <p>else if를 이용하면 조건문을 좀 더 풍부하게 할 수 있다.결과는 2다.</p>
+    <pre>
+        <code>
+            if(false){
+                alert(1);
+            } else if(false){
+                alert(2);
+            } else if(true){
+                alert(3);
+            } else {
+                alert(4);
+            }
+        </code>
+    </pre>
+    <p>결과는 3이다.</p>
+    <pre>
+        <code>
+            if(false){
+                alert(1);
+            } else if(false){
+                alert(2);
+            } else if(true){
+                alert(3);
+            } else {
+                alert(4);
+            }
+        </code>
+    </pre>
+    <p>결과는 4다.</p>
+    <pre>
+        <code>
+            if(false){
+                alert(1);
+            } else if(false){
+                alert(2);
+            } else if(false){
+                alert(3);
+            } else {
+                alert(4);
+            }
+        </code>
+    </pre>
+    <ul>
+        <li>else if는 좀 더 다양한 케이스의 조건을 검사할 수 있는 기회를 제공한다. </li>
+        <li>else if의 특징은 if나 else와는 다르게 여러개가 올 수 있다는 점이다. </li>
+        <li> else if의 모든 조건이 false라면 else가 실행된다.</li>
+        <li> else는 생략 가능하다.</li>
+    </ul>
+    <h1>변수와 비교연산자</h1>
+    <pre>
+        <code>
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+            &lt;head&gt;
+                &lt;meta charset="utf-8"/&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;script&gt;
+                    id = prompt('아이디를 입력해주세요.')
+                    if(id=='egoing'){
+                    alert('아이디가 일치 합니다.')
+                    } else {
+                    alert('아이디가 일치하지 않습니다.')
+                    }
+                &lt;/script&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+        </code>
+    </pre>
+    <ul>
+        <li>위의 내용에서 prompt() 구문은 사용자가 입력한 값을 가져와서 id 변수의 값으로 대입한다.</li>
+        <li>이러한 것을 API 또는 함수라고 부른다</li>
+        <li> 사용자가 입력한 값이 egoing이라면 '아이디가 일치 합니다'를 출력하고 그렇지 않다면 '아이디가 일치하지 않습니다'를 출력한다.</li>
+    </ul>
+    <h1>조건문의 중첩</h1>
+    <pre>
+        <code>
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+            &lt;head&gt;
+                &lt;meta charset="utf-8"/&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;script&gt;
+                    id = prompt('아이디를 입력해주세요.');
+                    if(id=='egoing'){
+                        password = prompt('비밀번호를 입력해주세요.');
+                        if(password==='111111'){
+                            alert('인증 했습니다.');
+                        } else {
+                            alert('인증에 실패 했습니다.');
+                        }
+                    } else {
+                        alert('인증에 실패 했습니다.');
+                    }
+                &lt;/script&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+        </code>
+    </pre>
+    <ul>
+        <li>if문 안에 다시 if문이 등장했다. </li>
+        <li>즉 사용자가 입력한 값과 아이디의 값이 일치하는지를 확인한 후에 일치한다면 비밀번호가 일치하는지 확인한 것이다.</li>
+        <li> 이렇게 조건문은 조건문 안에 중첩해서 사용될 수 있다.</li>
+    </ul>
+    <h1>논리 연산자</h1>
+    <p>논리 연산자는 조건문을 좀 더 간결하고 다양한 방법으로 구사할 수 있도록 도와준다.</p>
+    <h2>&&</h2>
+    <pre>
+        <code>
+            if(true && true){
+                alert(1);
+            }
+            if(true && false){
+                alert(2);
+            }
+            if(false && true){
+                alert(3);
+            }
+            if(false && false){
+                alert(4);
+            }
+        </code>
+    </pre>
+    <ul>
+        <li>&&는 좌항과 우항이 모두 참(true)일 때 참이된다. </li>
+        <li>결과는 1이다. </li>
+        <li>&&의 좌우항이 모두 true인 것은 첫번째 조건문 밖에 없기 때문이다.</li>
+        <li>이러한 논리 연산자를 and 연산자라고 한다.</li>
+    </ul>
+    <pre>
+        <code>
+            &lt;!DOCTYPE html&gt;
+            &lt;html&gt;
+            &lt;head&gt;
+                &lt;meta charset="utf-8"/&gt;
+            &lt;/head&gt;
+            &lt;body&gt;
+                &lt;script&gt;
+                    id = prompt('아이디를 입력해주세요.');
+                    password = prompt('비밀번호를 입력해주세요.');
+                    if(id=='egoing' && password=='111111'){
+                        alert('인증 했습니다.');
+                    } else {
+                        alert('인증에 실패 했습니다.');
+                    }
+                &lt;/script&gt;
+            &lt;/body&gt;
+            &lt;/html&gt;
+        </code>
+    </pre>
+    <ul>
+        <li>중첩된 if문을 하나로 줄였다. </li>
+        <li>덕분에 코드의 복잡성도 낮아졌다. </li>
+        <li>&&는 아래와 같은 의미를 만든다.</li>
+        <li>"id의 값이 egoing이고 password의 값이 111111이면 참이다"</li>
+        <li>즉 && 연산자의 좌항과 우항이 모두 참일 때 전체가 참이 되는 것이다.</li>
+    </ul>
+    <h2>||</h2>
+    <ul>
+        <li>'||'는 '||'의 좌우항 중에 하나라도 true라면 true가 되는 논리 연산자다.</li>
+        <li>|기호는 통상 엔터키 위에 있는 원화표시 키를 쉬프트와 함께 누르면 입력된다.</li>
+        <li>or 연산자라고 부른다.</li>
+    </ul>
+    <pre>
+        <code>
+            if(true || true){
+                alert(1);
+            }
+            if(true || false){
+                alert(2);
+            }
+            if(false || true){
+                alert(3);
+            }
+            if(false || false){
+                alert(4);
+            }
+        </code>
+    </pre>
+    <ul>
+        <li>결과는 1,2,3이 출력된다.</li>
+        <li>마지막 조건문의 '||'는 좌항과 우항이 모두 false이기 때문에 false가 된다.</li>
+    </ul>
+    <pre>
+        <code>
+            id = prompt('아이디를 입력해주세요.');
+            if(id==='egoing' || id==='k8805' || id==='sorialgi'){
+                alert('인증 했습니다.');
+            } else {
+                alert('인증에 실패 했습니다.');
+            }
+        </code>
+    </pre>
+    <ul>
+        <li>id값으로 egoing, k8805, sorialgi 중의 하나를 입력하면 '인증 했습니다.' 출력, 그 외의 값을 입력하면 '인증에 실패 했습니다.' 출력</li>
+        <li>논리 연산자는 2개뿐 아니라 여러 개 사용 가능</li>
+    </ul>
+    <pre>
+        <code>
+            id = prompt('아이디를 입력해주세요.');
+            password = prompt('비밀번호를 입력해주세요.');
+            if((id==='egoing' || id==='k8805' || id==='sorialgi') && password==='111111'){
+                alert('인증 했습니다.');
+            } else {
+                alert('인증에 실패 했습니다.');
+            }
+        </code>
+    </pre>
+    <ul>
+        <li>id 값으로 egoing, k8805, sorialgi 중의 하나를 사용하고 비밀번호는 111111을 입력하면 right 외의 경우에는 wrong을 출력</li>
+        <li>or와 and를 혼합해서 사용</li>
+        <li>id 값을 테스트 하는 구간을 괄호()로 묶음(사칙연산의 괄호부터 계산하는 것과 같은 원리)</li>
+    </ul>
+    <h2>!</h2>
+    <ul>
+        <li>부정의 의미 : Boolean의 값을 역전시킴(true => false, false => true)</li>
+        <li>not연산자</li>
+    </ul>
+    <pre>
+        <code>
+            if(!true && !true){
+                alert(1);
+            }
+            if(!false && !true){
+                alert(2);
+            }
+            if(!true && !false){
+                alert(3);
+            }
+            if(!false && !false){
+                alert(4);
+            }                           //결과  4
+        </code>
+    </pre>
+    <h1>Boolean의 대체제</h1>
+    <h2>01</h2>
+    <ul>
+        <li>조건문에 사용될 수 있는 데이터 형이 꼭 불린만 되는 것은 아니다. </li>
+        <li>관습적인 이유로 0는 false 0이 아닌 값은 true로 간주된다.</li>
+    </ul>
+    <pre>
+        <code>
+            if(0){
+                alert(1)
+            }
+            if(1){
+                alert(2)
+            }                           //결과  2
+        </code>
+    </pre>
+    <h2>기타 false로 간주되는 데이터 형</h2>
+    <ul>
+        <li>다음은 false와 0 외에 false로 간주되는 데이터형의 리스트다.</li>
+        <li> if문의 조건으로 !(부정) 연산자를 사용했기 때문에 각 조건문의 첫번째 블록이 실행되는 것은 주어진 값이 false이기 때문이다.</li>
+    </ul>
+    <pre>
+        <code>
+            if(!''){
+                alert('빈 문자열')
+            }
+            if(!undefined){
+                alert('undefined');
+            }
+            var a;
+            if(!a){
+                alert('값이 할당되지 않은 변수'); 
+            }
+            if(!null){
+                alert('null');
+            }
+            if(!NaN){
+                alert('NaN');
+            }
+        </code>
+    </pre>
+</body>
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>프로그램 설계</h1>
+    <h2>개요</h2>
+    <h3>제목</h3>
+    <p>숫자 야구 게임</p>
+    <h2>기능</h2>
+    1
+    <h2>요구사항</h2>
+    <ol>
+        <li>정답을 찾는데 소요된 시간과 횟수 출력</li>
+        <li>랜덤함수를 이용하여 0~9 사이의 3자리 정수 생성</li>
+        <li>사용자 입력은 0~999 사이의 정수로 입력</li>
+        <li>분할 컴파일이 가능하도록 다중 소스 파일 생성</li>
+    </ol>
+    2
+    <h1>코드 분석</h1>
+    <h2>헤더 파일</h2>
+    <pre>
+        <code>
+            #include &lt;stdio.h&gt;
+            #include &lt;stdlib.h&gt;
+            #include &lt;time.h&gt;
+            
+            #define STRIKE 2
+            #define BALL 1
+            
+            int * check(int*, int*);
+            void makeUserNum(int *);
+            void makeComNum(int *);
+            int tm_secDiff(time_t, time_t);
+            int tm_minDiff(time_t, time_t);
+        </code>
+    </pre>
+    <h2>랜덤값 생성</h2>
+    <pre>
+        <code>
+            void makeComNum(int *com)
+            {
+            　int i;
+            　srand (time(NULL));
+            　for (i=0; i&lt;3; i++)
+            　{
+            　　com[i] = rand() % 10;
+            　　printf("%d", com[i]);
+            　}
+            }
+        </code>
+    </pre>
+    <h2>소요시간 처리</h2>
+    <pre>
+        <code>
+            int tm_minDiff(time_t end, time_t start)
+            {
+            　 double d_diff;
+            　d_diff = difftime(end, start);
+            　return d_diff / 60;
+            }
+
+            int tm_secDiff(time_t end, time_t start)
+            {
+            　int tm_min;
+            　double d_diff;
+            　d_diff = difftime(end, start);
+            　tm_min = d_diff / 60;
+            　return d_diff - (tm_min * 60);
+            }
+        </code>
+    </pre>
+    <h2>핵심요약</h2>
+    <div class="well">
+        <h2>프로그램 설계</h2>
+        <ul>
+            <li>시간함수 관련 라이브러리를 이용하면 현재 시간, 시간 차이 등을 간단하게얻을 수 있음</li>
+            <li>일반적으로 IDE에서 프로젝트를 생성한 후 다중 소스파일로 작성하여 프로그램을개발함</li>
+            <li>1~10까지의 값을 난수 발생하기 위해서는 rand()%10+1의 연산을 이용함</li>
+        </ul>
+    </div>
+    <div class="well">
+        <h2>코드 분석</h2>
+        <ul>
+            <li>랜덤값은 rand 함수를 이용하여 발생시킬 수 있음</li>
+            <li>rand 함수는 랜덤값을 발생시키지만 실제로는 항상 동일한 값을 발생시킴</li>
+            <li>다른 랜덤값 생성을 위하여 랜덤함수 호출 전 srand 함수를 이용하여 다른시드를 전달함</li>
+        </ul>
+    </div>
+</body>
+
+</html>

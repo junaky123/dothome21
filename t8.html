@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>반복문</h1>
+    <p>반복문은 컴퓨터에게 반복적인 작업을 지시하는 방법이다.</p>
+    <h2>반복문의 문법</h2>
+    <p>반복문의 문법은 몇가지가 있다. 각각의 구문은 서로 대체 가능하기 때문에 상황과 취향에 따라서 선택해서 사용하면 된다.</p>
+    <h2>while</h2>
+    <h3>형식</h3>
+    <pre>
+        <code>
+            while (조건){
+                반복해서 실행할 코드
+            }
+        </code>
+    </pre>
+    <pre>
+        <code>
+            while(true){
+                document.write('coding everybody &lt;br /&gt;');
+            }
+        </code>
+    </pre>
+    <ul>
+        <li>document.write는 자바스크립트를 이용해서 웹페이지에 텍스트를 출력한다.</li>
+        <li>이것은 웹브라우저에서만 동작할 것이다. </li>
+        <li>node.js 콘솔과 같은 환경에서 실습을 한다면 console.log와 같은 메소드를 대신 사용한다.</li>
+    </ul>
+    <pre>
+        <code>
+            while(false){
+                document.write('coding everybody  &lt;br /&gt;');     아무런 결과도 출력하지 않을 것이다.
+            }
+        </code>
+    </pre>
+    <ul>
+        <li>while문은 while문 뒤에 따라오는 괄호 안의 조건이 참(true)면 중괄호 안의 코드 구간을 반복적으로 실행한다. </li>
+        <li>조건이 false면 반복문이 실행되지 않는다.</li>
+        <li>여기서 true와 false는 종료조건이 되는데, 이 값을 변경하는 것을 통해서 반복문을 종료시킬 수 있다. </li>
+        <li>반복문에서 종료조건을 잘못 지정하면 무한반복이 되거나, 반복문이 실행되지 않는다.</li>
+    </ul>
+    <pre>
+        <code>
+            var i = 0;
+            // 종료조건으로 i의 값이 10보다 작다면 true, 같거나 크다면 false가 된다.
+            while(i  &lt; 10){
+                // 반복이 실행될 때마다 coding everybody  &lt;br /&gt;이 출력된다.  &lt;br /&gt; 줄바꿈을 의미하는 HTML 태그
+                document.write('coding everybody &lt;br /&gt;');
+                // i의 값이 1씩 증가한다.
+                i++
+            }
+        </code>
+    </pre>
+    <h2>for</h2>
+    <h3>형식</h3>
+    <pre>
+        <code>
+            for(초기화; 반복조건; 반복이 될 때마다 실행되는 코드){
+                반복해서 실행될 코드
+            }
+        </code>
+        <code>
+            for(var i = 0; i &lt; 10; i++){
+                document.write('coding everybody'+i+'&lt;br /&gt;');
+            }
+        </code>
+    </pre>
+    <ul>
+        <li>for문은 제일 먼저 '초기화'를 한다. </li>
+        <li>반복조건 실행 : i &lt; 0 (처음 실행 시 i 값은 0)</li>
+        <li>중괄호 안의 내용(반복해서 실행될 코드) 실행 : 'coding everybody0<br/>' 텍스트 출력</li>
+        <li>반복이 될 때마다 실행되는 코드 실행 : i++ (현재 i의 값에 1을 더함 -> i값이 1이 됨)</li>
+        <li>(반복조건 실행, 반복해서 실행될 코드 실행, 반복이 될 대마다 실행되는 코드 실행) 반복</li>
+        <li>i &lt; 10 을 충족시키지 못할 때 반복문 종료</li>
+    </ul>
+    <h2>반복문이 없다면</h2>
+    <p>coding everybody를 10번 반복해서 출력하고 싶다고 한다면 아래와 같이 코드를 작성하면 된다.</p>
+    <pre>
+        <code>
+            document.write('coding everybody');
+            document.write('coding everybody');
+            document.write('coding everybody');
+            document.write('coding everybody');
+            document.write('coding everybody');
+            document.write('coding everybody');
+            document.write('coding everybody');
+            document.write('coding everybody');
+            document.write('coding everybody');
+            document.write('coding everybody');
+            document.write('coding everybody');
+        </code>
+    </pre>
+    <pre>
+        <code>
+            var i = 0;
+            while(i &lt; 10){
+                document.write('coding everybody &lt;br /&gt;');
+                i++;
+            }
+        </code>
+    </pre>
+    <ul>
+        <li>반복문 없이 coding everybody 뒤에 숫자를 1부터 10까지 붙이고 싶다면 아래와 같이 코드를 작성해야 할 것이다.</li>
+        <li>행마다 숫자를 바꿔야 하기 때문에 Copy & Paste도 할 수 없다.</li>
+    </ul>
+    <pre>
+        <code>
+            document.write('coding everybody 1 &lt;br /&gt;')
+            document.write('coding everybody 2 &lt;br /&gt;')
+            //중략
+            document.write('coding everybody 9 &lt;br /&gt;')
+            document.write('coding everybody 10 &lt;br /&gt;')
+        </code>
+    </pre>
+    <h2>반복문의 제어</h2>
+    <h3>break</h3>
+    <p>반복작업을 중간에 중단시키고 싶다면 break를 사용하면 된다. </p>
+    <pre>
+        <code>
+            for(var i = 0; i &lt; 10; i++){
+                if(i === 5) {
+                    break;
+                }
+                document.write('coding everybody'+i+'&lt;br /&gt;');
+            }
+        </code>
+        <code>
+            coding everybody 0
+            coding everybody 1
+            coding everybody 2
+            coding everybody 3
+            coding everybody 4
+        </code>
+    </pre>
+    <ul>
+        <li>종료조건에 따르면 10행이 출력돼야 하는데 5행만 출력되었다. </li>
+        <li>2행의 if(i === 5) 에 의해서 i의 값이 5일 때 break 문이 실행되면서 반복문이 완전히 종료된 것이다. </li>
+        <li>반복문 안에서 break가 실행되면 반복문을 즉시 종료시키는 것이다.</li>
+    </ul>
+    <h2>continue</h2>
+    <pre>
+        <code>
+            for(var i = 0; i  &lt; 10; i++){
+                if(i === 5) {
+                    continue;
+                }
+                document.write('coding everybody'+i+'&lt;br /&gt;');
+            }
+        </code>
+        <code>
+            coding everybody 0
+            coding everybody 1
+            coding everybody 2
+            coding everybody 3
+            coding everybody 4
+            coding everybody 6
+            coding everybody 7
+            coding everybody 8
+            coding everybody 9
+        </code>
+    </pre>
+    <ul>
+        <li>실행을 즉시 중단 하면서 반복은 지속</li>
+        <li>i의 값이 5가 되었을 때 실행이 중단 됐기 때문에 continue 이후의 구문이 실행되지 않은 것이다. </li>
+        <li>하지만 반복문은 중단되지 않았기 때문에 나머지 결과가 출력된 것이다.</li>
+    </ul>
+    <h2>반복문의 중첩</h2>
+    <pre>
+        <code>
+            // 0부터 9까지 변수 i에 순차적으로 값을 할당        
+            for(var i = 0; i  &lt; 10; i++){
+                // 0부터 9까지의 변수를 j의 값에 순차적으로 할당
+                for(var j = 0; j  &lt; 10; j++){    
+                    // i와 j의 값을 더한 후에 출력
+                    // String은 숫자인 i와 j의 데이터 타입을 문자로 형태를 변환하는 명령이다. 
+                    // String()을 제거하고 실행해보면 의미가 좀 더 분명하게 드러날 것이다.
+                    document.write(String(i)+String(j)+'&lt;br /&gt;');
+                }
+            }
+        </code>
+    </pre>
+    <ul>
+        <li>반복문 안에는 다시 반복문이 나타날 수 있다. </li>
+    </ul>
+</body>
+</html>
